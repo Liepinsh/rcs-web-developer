@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>About us</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="https:/resources/demos/style.css">
+    <link rel="stylesheet" href="https://maps/documentation/javascript/demos/demos.css">
+
+    <link rel="stylesheet" type="text/css" media="screen" href="css/main.css">
+</head>
+<body>
+    <header class="header">
+         <!-- conteiner-fluid: izmanto visu mājaslapas platumu -->
+         <div class="container-fluid">
+            <div class="row">
+                <div class="col-xs-3 main-logo">
+                    <a href="index.html" >
+                        <img src="https://img-cache.cdn.gaiaonline.com/02744d6cbcc08ef4b0960f3bc8feaf4c/http://static.tumblr.com/986c01f269c6e5577b55bc3c088db60a/zjg7b8w/Jn2n58l52/tumblr_static_25r7daot4zmsw4wgskwkgcw0w.png">
+                    </a>
+                </div>
+                <div class="col-xs-9">
+                    <ul class="main-menu">
+                        <li class="main-menu-item">
+                            <a href="index.html">Home</a>
+                        </li>
+                        <li class="main-menu-item">
+                            <a href="articles.html">Articles</a>
+                        </li>
+                        <li class="main-menu-item">
+                            <a href="chat.html">Chat</a>
+                        </li>
+                        <li class="main-menu-item">
+                            <a href="register.html">Register</a>
+                        </li>
+                        <li class="main-menu-item">
+                            <a href="about-us.html">About us</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main class="main">
+        <div class="container">
+            <div class="row shortcut">
+                <ul class="breadcrumb">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about-us.html">About us</a></li>
+                </ul>
+            </div>
+            <div id="tabs">
+                <ul>
+                    <li><a href="#tabs-1">Our team</a></li>
+                    <li><a href="#tabs-2">Free time</a></li>
+                    <li><a href="#tabs-3">Cat manager</a></li>
+                    <li><a href="#tabs-4">Programmer cat</a></li>
+                </ul>
+                <div id="tabs-1">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="row">
+                                <div class="col-sm-4 hidden-xs">
+                                    <img class="tab-img" src="data:image/jpeg;base64,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">
+                                </div>
+                                <div class="col-xs-12 col-sm-8">
+                                    <p>
+                                        We are the cat family. We can provide you with the information of the secret world of cats.<br>
+                                        Everyone knows us by our street name: "The CAT CUMPILATOR crew". Our job is to manipulate with human brain.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="tabs-2">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="row">
+                                <div class="col-sm-4 hidden-xs">
+                                    <img class="tab-img" src="http://giantgag.net/wp-content/uploads/2014/02/funny-cat-party-bring-your-own-box-01.jpg">
+                                </div>
+                                <div class="col-xs-12 col-sm-8">
+                                    <p>
+                                        Everyone knows we are the best in our feald.<br>
+                                        But only few know, that its because we do PARTY FRIDAYS. Bring you'r box to work day!
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="tabs-3">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="row">
+                                <div class="col-sm-4 hidden-xs">
+                                    <img class="tab-img" src="https://pbs.twimg.com/media/B5pjF_8IEAE_erU.jpg:large">
+                                </div>
+                                <div class="col-xs-12 col-sm-8">
+                                    <p>
+                                        Cat manager manages the web development process. Purffect manager.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="tabs-4">
+                    <div class="row">
+                        <div class="col-xs-12">
+                    <div class="row">
+                        <div class="col-sm-4 hidden-xs">
+                            <img class="tab-img" src="https://rforcats.net/assets/img/programmer.png">
+                        </div>
+                        <div class="col-xs-12 col-sm-8">
+                            <p>
+                                Cats usualy act like they are more superior then humans.<br>
+                            </p>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+            <div class="row">
+                <h4>Contacts</h4>
+            </div>
+            <div class="row map-contacts">
+                <div class="col-xs-12 contacts">
+                    <div class="row">
+                        <div class="col-sm-5">
+                            <div id="map">
+                                Google maps
+                            </div>
+                        </div>
+                        <div class="col-sm-7">
+                            <h5>Adress:</h5>
+                            <p>Pils laukums 3, Rīga, LV-1050, Latvia</p>
+                            <h5>Email:</h5>
+                            <a href="mailto:cat@catnip.com">cat@catnip.com</a>
+                            <h5>Phone:</h5>
+                            <p>+371 66666666</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="footer">
+        <p>&copy cat corp. All rights reserved 2018.</p>
+    </footer>
+    
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAm46NQhA_hX9UuZzpNQ88OD34NTwjr2Ig&callback=initMap" async defer></script>
+    
+        <script>
+            $( function() {
+                $( "#tabs" ).tabs();
+            } );
+            function initMap() {
+                // Create a map object and specify the DOM element for display.
+                var map = new google.maps.Map(document.getElementById('map'), {
+                center: {lat: 56.964, lng: 24.103},
+                zoom: 16
+                });
+
+                var marker = new google.maps.Marker({
+                position: {lat: 56.964, lng: 24.104},
+                map: map,
+                title: 'Riga Coding School'
+                });
+            }
+        </script>
+</body>
+</html>

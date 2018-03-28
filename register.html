@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Register</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/main.css">
+</head>
+<body>
+    <header class="header">
+         <!-- conteiner-fluid: izmanto visu mājaslapas platumu -->
+         <div class="container-fluid">
+            <div class="row">
+                <div class="col-xs-3 main-logo">
+                    <a href="index.html" >
+                        <img src="https://img-cache.cdn.gaiaonline.com/02744d6cbcc08ef4b0960f3bc8feaf4c/http://static.tumblr.com/986c01f269c6e5577b55bc3c088db60a/zjg7b8w/Jn2n58l52/tumblr_static_25r7daot4zmsw4wgskwkgcw0w.png">
+                    </a>
+                </div>
+                <div class="col-xs-9">
+                    <ul class="main-menu">
+                        <li class="main-menu-item">
+                            <a href="index.html">Home</a>
+                        </li>
+                        <li class="main-menu-item">
+                            <a href="articles.html">Articles</a>
+                        </li>
+                        <li class="main-menu-item">
+                            <a href="chat.html">Chat</a>
+                        </li>
+                        <li class="main-menu-item">
+                            <a href="register.html">Register</a>
+                        </li>
+                        <li class="main-menu-item">
+                            <a href="about-us.html">About us</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main class="main">
+        <div class="container">
+           <div class="row">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <ul class="breadcrumb">
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="register.html">Register</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-4">
+                        <form id="reg-form">
+                            <label for="Register">Register</label><br>
+                            <div class="errors">
+                                <ul>
+
+                                </ul>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name="username" placeholder="Username*">
+                            </div>
+                            <div class="form-group">
+                                <input type="password" name="password" placeholder="Password*">
+                            </div>
+                            <div class="form-group">
+                                <input type="password" name="password2" placeholder="Retype password*">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name="firstName" placeholder="First name*">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name="lastName" placeholder="Last name*" >
+                            </div>
+                            <div class="form-group">
+                                <select name="country" class="country-select" placeholder="Please select country">
+                                    <option value="0">Select country*</option>
+                                    <option value="1">Latvia</option>
+                                    <option value="2">Sweden</option>
+                                    <option value="3">Norway</option>
+                                    <option value="4">China</option>
+                                </select>
+                            </div>
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" name="agree" value="1"> Agree with terms and conditions*
+                                </label>
+                            </div>
+                            <button type="submit">Register</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="footer">
+        <p>&copy cat corp. All rights reserved 2018.</p>
+    </footer>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script>
+        $('#reg-form').submit(function(){
+            var errors = [];
+            $('.errors ul').html('');
+            $('.has-error').removeClass('has-error');
+
+            if ($('input[name="username"]').val() == '') {
+                errors.push('Please enter username');
+                $('input[name="username"]').addClass('has-error');
+            }
+            if ($('input[name="password"]').val() == '') {
+                errors.push('Please enter password');
+                $('input[name="password"]').addClass('has-error');
+            }
+            if ($('input[name="password"]').val().length < 8) {
+                errors.push('Password must be at least 8 symbols');
+                $('input[name="password"]').addClass('has-error');
+            }
+            if ($('input[name="password2"]').val() == '') {
+                errors.push('Please retype the password');
+                $('input[name="password2"]').addClass('has-error');
+            }
+            if ($('input[name="password2"]').val() != $('input[name="password"]').val()) {
+                errors.push('Passwords must match');
+                $('input[name="password"]').addClass('has-error');
+                $('input[name="password2"]').addClass('has-error');
+            }
+            if ($('input[name="first_name"]').val() == '') {
+                errors.push('Please enter first name');
+                $('input[name="first_name"]').addClass('has-error');
+            }
+            if ($('select[name="country"]').val() == 0) {
+                errors.push('Please select country');
+                $('select[name="country"]').addClass('has-error');
+            }
+            if ($('input[name="agree"]').is(":checked") == false) {
+                errors.push('Please agree with terms and conditions');
+                $('input[name="agree"]').addClass('has-error');
+            }
+            if (errors.length > 0) {
+                // handle errors
+                for (var index = 0; index < errors.length; index++) {
+                    var element = errors[index];
+                    $('.errors ul').append('<li>' + element + '</li>');
+                }
+                $('.errors').show();
+                return false;
+            }
+        });
+    </script>
+</body>
+</html>
+<!-- vai vajag atstarpi zem register
+kā uztaisīt, lai country un terms text būtu vienā līnijā ar reg. info logiem
+kā izveidot atstarpes starp home, register, tab utt
+kā ievietot > simbolus, kam nav īsta nozīme - breadcrumbs
+kā izveidot, ka lapai ir viens max izmērs - vh-nop
+chat html send pogas nemainība - konkrēti px
+about us tab pogu atstarpes un rādiusi - list
+about us ka noņemt to, ka viss vienā lapā, bez scroll iespējām - alt+z
+ -->
+
+ <!-- 
+ievietot vh, lai lapa izskatītos jēdzīga - turpināt (main)
+github failus no jāņa pārbaudīt
+caruselis: https://getbootstrap.com/docs/3.3/javascript/#carousel;
+  -->
+
+  <!-- kā noņemt padding no javascript tabs iekš about us? -->
